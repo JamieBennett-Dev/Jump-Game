@@ -28,7 +28,7 @@ const checkDead = setInterval(function() {
     const characterTop = parseInt(window.getComputedStyle(character).getPropertyValue('top'));
     const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
 
-    if (blockLeft < 20 && blockLeft > 0 && characterTop > 130) { // if you hit the block
+    if (blockLeft < 20 && blockLeft > 0 && characterTop > 100) { // if you hit the block
         block.style.animation = 'none';
         alert('YOU LOSE! score: '+Math.floor(counter/100));
         counter = 0;
