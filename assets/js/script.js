@@ -3,6 +3,14 @@ const game = document.getElementById('game');
 const character = document.getElementById('character');
 const block = document.getElementById('block');
 
+// gif variable
+const gifs = [
+    'assets/gifs/IdleDino.gif',
+    'assets/gifs/WalkingDino - left.gif',
+    'assets/gifs/WalkingDino-right.gif',
+    'assets/gifs/IdleDinoRotate.gif'
+];
+
 // jump animation function
 function jump() {
     if (!character.classList.contains('animate')) {

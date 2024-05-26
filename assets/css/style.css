@@ -1,12 +1,34 @@
-* {
+body {
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 #game {
     width: 500px;
     height: 200px;
     border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes moveBackground {
+    from { background-position: 100% 0; }
+    to { background-position: 0 0; }
+}
+
+#background {
+    width: 200%; /* Make it twice the width of the game area to create a seamless loop */
+    height: 100%;
+    background-image: url('../images/PixelMountains.jpg');
+    background-repeat: repeat; /* Ensure the background repeats horizontally */
+    background-position: 100% 0;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: moveBackground 20s linear infinite; /* Adjust duration as needed */
 }
 
 #character {
@@ -14,7 +36,7 @@
     height: 50px;
     background-color: red;
     position: relative;
-    top: 150px;
+    top: 120px;
 }
 
 .animate {
@@ -22,10 +44,10 @@
 }
 
 @keyframes jump {
-    0%{top:150px;}
-    30%{top:100px;}
-    70%{top:100px;}
-    100%{top:150px;}
+    0%{top:120px;}
+    30%{top:70px;}
+    70%{top:70px;}
+    100%{top:120px;}
 }
 
 #block {
@@ -33,7 +55,7 @@
     height: 20px;
     background-color: blue;
     position: relative;
-    top: 130px;
+    top: 100px;
     left: 480px;
     animation: block 1s infinite linear;
 }
